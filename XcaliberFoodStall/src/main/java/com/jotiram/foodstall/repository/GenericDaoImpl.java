@@ -14,7 +14,7 @@ public class GenericDaoImpl<E,K extends Serializable> implements GenericDao<E, K
 	protected EntityManager entityManager;
 	protected Class<? extends E> daoType;
 	
-	@SuppressWarnings({"rawtypes", "uncheched" })
+	@SuppressWarnings({"rawtypes", "unchecked" })
 	
 	public GenericDaoImpl() {
 		Type genericClassType =getClass().getGenericSuperclass();
@@ -42,6 +42,7 @@ public class GenericDaoImpl<E,K extends Serializable> implements GenericDao<E, K
 	
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<E> findAll() {
 		
